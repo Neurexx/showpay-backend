@@ -3,15 +3,14 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
 
-const URI1=process.env.URI1
-const URI2=process.env.URI2
+
 
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   
   app.enableCors({
-    origin: [URI1,URI2],
+    origin: ["*"],
     credentials: true,
   });
   
